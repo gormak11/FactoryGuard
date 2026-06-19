@@ -4,6 +4,7 @@ from __future__ import annotations
 from langgraph.graph import END, START, StateGraph
 
 from agents import action_node, diagnosis_node
+from integration.governance_node import governance_node
 from state import WorkflowState
 
 CONFIDENCE_THRESHOLD = 0.6
@@ -37,6 +38,7 @@ def build_workflow():
     g.add_node("diagnosis", diagnosis_node)
     g.add_node("orchestrator", orchestrator)
     g.add_node("action", action_node)
+    g.add_node("governance", governance_node)
 
     g.add_edge(START, "diagnosis")
     g.add_edge("diagnosis", "orchestrator")
@@ -45,7 +47,8 @@ def build_workflow():
         _route,
         {"rediagnose": "diagnosis", "act": "action"},
     )
-    g.add_edge("action", END)
+    g.add_edge("action", "governance")
+    g.add_edge("governance", END)
 
     return g.compile()
 
