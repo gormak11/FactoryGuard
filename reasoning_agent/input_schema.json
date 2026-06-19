@@ -1,0 +1,71 @@
+{
+  "request_id": "uuid-v4",
+  "timestamp": "ISO-8601",
+  "machine_id": "string",
+
+  "ml_prediction": {
+    "failure_probability": "float (0.0–1.0)",
+    "predicted_failure": "boolean",
+    "model_version": "string",
+    "model_confidence": "float (0.0–1.0)",
+    "top_features": [
+      {
+        "feature_name": "string",
+        "feature_value": "float",
+        "importance_score": "float",
+        "deviation_from_normal": "float (% above/below baseline)"
+      }
+    ]
+  },
+
+  "sensor_data": {
+    "air_temperature":     { "value": "float", "unit": "K",  "normal_range": [295, 305] },
+    "process_temperature": { "value": "float", "unit": "K",  "normal_range": [305, 313] },
+    "rotational_speed":    { "value": "float", "unit": "RPM","normal_range": [1168, 2886] },
+    "torque":              { "value": "float", "unit": "Nm", "normal_range": [3.8, 76.6] },
+    "tool_wear":           { "value": "float", "unit": "min","normal_range": [0, 253] },
+    "temperature_delta":   { "value": "float", "unit": "K",  "normal_range": [8.6, 9.4] }
+  },
+
+  "rag_evidence": {
+    "retrieval_confidence": "float (0.0–1.0)",
+    "similar_incidents": [
+      {
+        "incident_id": "string",
+        "description": "string",
+        "machine_type": "string",
+        "failure_mode": "string",
+        "time_to_failure_hours": "float",
+        "resolution": "string",
+        "similarity_score": "float"
+      }
+    ],
+    "relevant_sops": [
+      {
+        "sop_id": "string",
+        "title": "string",
+        "content": "string",
+        "applicability": "string",
+        "priority": "MANDATORY | RECOMMENDED"
+      }
+    ],
+    "maintenance_history": [
+      {
+        "date": "ISO-8601",
+        "action_taken": "string",
+        "technician": "string",
+        "outcome": "string"
+      }
+    ]
+  },
+
+  "machine_context": {
+    "machine_type": "string",
+    "current_production_batch": "string",
+    "batch_criticality": "LOW | MEDIUM | HIGH | CRITICAL",
+    "last_maintenance_date": "ISO-8601",
+    "hours_since_maintenance": "float",
+    "current_operator": "string",
+    "shift": "string"
+  }
+}

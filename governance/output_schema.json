@@ -1,0 +1,61 @@
+{
+  "request_id": "uuid-v4",
+  "timestamp": "ISO-8601",
+  "governance_version": "string",
+
+  "decision": {
+    "verdict": "AUTO_APPROVE | HUMAN_APPROVAL_REQUIRED | BLOCKED | EMERGENCY_ALERT",
+    "action_approved": "string (action_type from recommended_actions[0])",
+    "decision_rationale": "string",
+    "override_applied": "boolean",
+    "override_reason": "string | null"
+  },
+
+  "policy_checks": [
+    {
+      "check_id": "string",
+      "check_name": "string",
+      "result": "PASS | FAIL | WARN",
+      "detail": "string"
+    }
+  ],
+
+  "risk_gates": {
+    "safety_gate": "OPEN | CLOSED",
+    "compliance_gate": "OPEN | CLOSED",
+    "production_gate": "OPEN | CLOSED",
+    "confidence_gate": "OPEN | CLOSED",
+    "all_gates_open": "boolean"
+  },
+
+  "human_approval_request": {
+    "required": "boolean",
+    "urgency": "IMMEDIATE | WITHIN_15MIN | WITHIN_1HR",
+    "escalation_level": "OPERATOR | SUPERVISOR | PLANT_MANAGER",
+    "timeout_action": "string (what happens if no response in time)",
+    "context_for_human": {
+      "summary": "string",
+      "risk_level": "string",
+      "recommended_action": "string",
+      "evidence_summary": "string",
+      "options": ["APPROVE", "REJECT", "MODIFY", "ESCALATE"]
+    }
+  },
+
+  "audit_log": {
+    "log_id": "uuid-v4",
+    "machine_id": "string",
+    "event_type": "string",
+    "risk_level": "string",
+    "decision": "string",
+    "reasoning_agent_confidence": "float",
+    "governance_checks_passed": "integer",
+    "governance_checks_failed": "integer",
+    "human_involved": "boolean",
+    "human_decision": "APPROVED | REJECTED | MODIFIED | null",
+    "human_actor": "string | null",
+    "action_executed": "boolean",
+    "execution_timestamp": "ISO-8601 | null",
+    "outcome": "string | null"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "request_id": "uuid-v4 (same as input)",
+  "timestamp": "ISO-8601",
+  "agent_version": "string",
+  "machine_id": "string",
+
+  "failure_analysis": {
+    "failure_detected": "boolean",
+    "failure_probability": "float",
+    "failure_modes_identified": [
+      {
+        "mode": "TWF | HDF | PWF | OSF | RNF",
+        "full_name": "string",
+        "probability": "float",
+        "primary_indicators": ["string"]
+      }
+    ],
+    "severity_assessment": "NORMAL | WATCH | WARNING | CRITICAL"
+  },
+
+  "root_cause_hypothesis": {
+    "primary_cause": "string",
+    "contributing_factors": ["string"],
+    "evidence_basis": {
+      "ml_evidence": "string",
+      "rag_evidence": "string",
+      "sensor_anomalies": ["string"]
+    },
+    "hypothesis_confidence": "float (0.0–1.0)",
+    "alternative_hypotheses": [
+      {
+        "cause": "string",
+        "probability": "float",
+        "why_less_likely": "string"
+      }
+    ]
+  },
+
+  "risk_assessment": {
+    "overall_risk_level": "LOW | MEDIUM | HIGH | CRITICAL",
+    "risk_score": "float (0.0–100.0)",
+    "risk_dimensions": {
+      "safety_risk":      { "level": "string", "score": "float", "reason": "string" },
+      "production_risk":  { "level": "string", "score": "float", "reason": "string" },
+      "compliance_risk":  { "level": "string", "score": "float", "reason": "string" },
+      "equipment_risk":   { "level": "string", "score": "float", "reason": "string" }
+    },
+    "time_to_failure_estimate": {
+      "hours": "float",
+      "confidence": "float",
+      "basis": "string"
+    }
+  },
+
+  "recommended_actions": [
+    {
+      "action_id": "string",
+      "action_type": "MONITOR | REDUCE_LOAD | SCHEDULE_MAINTENANCE | IMMEDIATE_SHUTDOWN | EMERGENCY_STOP",
+      "description": "string",
+      "urgency": "IMMEDIATE | WITHIN_1HR | WITHIN_4HR | SCHEDULED",
+      "expected_outcome": "string",
+      "sop_reference": "string",
+      "estimated_downtime_hours": "float",
+      "production_impact": "string",
+      "rank": "integer (1 = most recommended)"
+    }
+  ],
+
+  "confidence_score": {
+    "overall": "float (0.0–1.0)",
+    "ml_confidence": "float",
+    "rag_retrieval_confidence": "float",
+    "reasoning_confidence": "float",
+    "low_confidence_reasons": ["string"]
+  },
+
+  "evidence_used": {
+    "ml_features_cited": ["string"],
+    "incidents_cited": ["incident_id"],
+    "sops_cited": ["sop_id"],
+    "sensor_thresholds_violated": [
+      {
+        "sensor": "string",
+        "current_value": "float",
+        "threshold": "float",
+        "deviation_percent": "float"
+      }
+    ]
+  },
+
+  "reasoning_trace": [
+    {
+      "step": "integer",
+      "action": "string",
+      "observation": "string",
+      "conclusion": "string"
+    }
+  ],
+
+  "flags": {
+    "hallucination_risk": "boolean",
+    "low_rag_coverage": "boolean",
+    "conflicting_evidence": "boolean",
+    "novel_failure_pattern": "boolean",
+    "force_human_review": "boolean"
+  }
+}

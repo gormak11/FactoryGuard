@@ -1,0 +1,17 @@
+{
+  "request_id": "uuid-v4",
+  "reasoning_output": "full Reasoning Agent Output object",
+  "machine_context": {
+    "machine_id": "string",
+    "current_production_batch": "string",
+    "batch_criticality": "LOW | MEDIUM | HIGH | CRITICAL",
+    "operator_present": "boolean",
+    "shift_supervisor_available": "boolean",
+    "time_since_last_human_review": "float (hours)"
+  },
+  "policy_overrides": {
+    "force_human_review_all": "boolean",
+    "emergency_mode_active": "boolean",
+    "maintenance_window_active": "boolean"
+  }
+}
