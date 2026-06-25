@@ -1,0 +1,38 @@
+[
+  {
+    "id": "m1",
+    "document": "Machine M3 on 2024-02-20: Bearing replaced by Raj Kumar",
+    "metadata": {
+      "id": "m1",
+      "machine": "M3",
+      "date": "2024-02-20",
+      "action": "Bearing replaced",
+      "technician": "Raj Kumar",
+      "status": "completed"
+    }
+  },
+  {
+    "id": "m2",
+    "document": "Machine M3 on 2024-04-01: Routine inspection by Amit Singh",
+    "metadata": {
+      "id": "m2",
+      "machine": "M3",
+      "date": "2024-04-01",
+      "action": "Routine inspection",
+      "technician": "Amit Singh",
+      "status": "OK"
+    }
+  },
+  {
+    "id": "m3",
+    "document": "Machine M5 on 2024-03-05: Cooling fan replaced by Raj Kumar",
+    "metadata": {
+      "id": "m3",
+      "machine": "M5",
+      "date": "2024-03-05",
+      "action": "Cooling fan replaced",
+      "technician": "Raj Kumar",
+      "status": "completed"
+    }
+  }
+]

@@ -243,9 +243,41 @@ def main():
           f"-> action_approved={timed_out_result['decision']['action_approved']}")
     print(f"  rationale:         {timed_out_result['decision']['decision_rationale']}")
 
+    # ── Scenario 9: Full End-to-End System Orchestrator ──
+    print("\n" + "=" * 78)
+    print("SCENARIO: Unified System Integration — End-to-End Pipeline")
+    print("=" * 78)
+    import pandas as pd
+    from factoryguard_system import run_factoryguard_system
+
+    test_row = pd.DataFrame([{
+        "Air_temperature_K":     304.5,
+        "Process_temperature_K": 312.0,
+        "Rotational_speed_rpm":  1400.0,
+        "Torque_Nm":             75.0,
+        "Tool_wear_min":         245.0,
+        "Type_H":                0,
+        "Type_L":                1,
+        "Type_M":                0,
+    }])
+    
+    sys_result = run_factoryguard_system(
+        test_row,
+        machine_id="M3",
+        machine_context={"operator_present": True, "batch_criticality": "HIGH"},
+        force_mock=True
+    )
+    print(f"  Unified Verdict:   {sys_result['decision']['verdict']}")
+    print(f"  rationale:         {sys_result['decision']['decision_rationale']}")
+    print(f"  checks_passed:     {sys_result['audit_log']['governance_checks_passed']}")
+    print(f"  checks_failed:     {sys_result['audit_log']['governance_checks_failed']}")
+
     # ── Sanity assertions (lightweight, not exhaustive) ──
     print("\n" + "=" * 78)
     print("Running lightweight sanity assertions...")
+    print("=" * 78)
+
+    assert sys_result["decision"]["verdict"] == "AUTO_APPROVE", "Scenario 9 should AUTO_APPROVE"
     print("=" * 78)
 
     r1, g1 = run_scenario(

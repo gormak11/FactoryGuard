@@ -1,0 +1,5 @@
+[
+  {"id": "m1", "machine": "M3", "date": "2024-02-20", "action": "Bearing replaced", "technician": "Raj Kumar", "status": "completed"},
+  {"id": "m2", "machine": "M3", "date": "2024-04-01", "action": "Routine inspection", "technician": "Amit Singh", "status": "OK"},
+  {"id": "m3", "machine": "M5", "date": "2024-03-05", "action": "Cooling fan replaced", "technician": "Raj Kumar", "status": "completed"}
+]

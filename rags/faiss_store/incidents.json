@@ -1,0 +1,41 @@
+[
+  {
+    "id": "i1",
+    "document": "Machine M3 issue: bearing wear on 2024-03-15. Resolution: Bearing replaced",
+    "metadata": {
+      "id": "i1",
+      "machine": "M3",
+      "date": "2024-03-15",
+      "issue": "bearing wear",
+      "vibration": "2.8x normal",
+      "cost": 120000,
+      "resolution": "Bearing replaced"
+    }
+  },
+  {
+    "id": "i2",
+    "document": "Machine M3 issue: vibration spike on 2024-01-08. Resolution: Lubrication applied",
+    "metadata": {
+      "id": "i2",
+      "machine": "M3",
+      "date": "2024-01-08",
+      "issue": "vibration spike",
+      "vibration": "2.2x normal",
+      "cost": 45000,
+      "resolution": "Lubrication applied"
+    }
+  },
+  {
+    "id": "i3",
+    "document": "Machine M5 issue: overheating on 2024-02-10. Resolution: Cooling fan replaced",
+    "metadata": {
+      "id": "i3",
+      "machine": "M5",
+      "date": "2024-02-10",
+      "issue": "overheating",
+      "temp": "95C",
+      "cost": 80000,
+      "resolution": "Cooling fan replaced"
+    }
+  }
+]

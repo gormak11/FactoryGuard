@@ -1,0 +1,38 @@
+[
+  {
+    "id": "SOP-001",
+    "document": "Vibration >2x normal requires immediate inspection and halt",
+    "metadata": {
+      "id": "SOP-001",
+      "trigger": "vibration anomaly",
+      "rule": "Vibration >2x normal requires immediate inspection and halt"
+    }
+  },
+  {
+    "id": "SOP-002",
+    "document": "Machine halt >4hrs needs supervisor approval",
+    "metadata": {
+      "id": "SOP-002",
+      "trigger": "machine halt",
+      "rule": "Machine halt >4hrs needs supervisor approval"
+    }
+  },
+  {
+    "id": "SOP-003",
+    "document": "Bearing replacement requires certified technician and vendor approval",
+    "metadata": {
+      "id": "SOP-003",
+      "trigger": "bearing failure",
+      "rule": "Bearing replacement requires certified technician and vendor approval"
+    }
+  },
+  {
+    "id": "SOP-004",
+    "document": "Temperature >90C triggers emergency shutdown protocol",
+    "metadata": {
+      "id": "SOP-004",
+      "trigger": "overheating",
+      "rule": "Temperature >90C triggers emergency shutdown protocol"
+    }
+  }
+]
