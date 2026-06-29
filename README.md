@@ -142,6 +142,12 @@ Every recommended action is passed sequentially through 8 checks:
 ---
 
 ## 4. How to Run and Verify the Pipeline
+Environment variable:
+Set GROQ_API_KEY if running Groq-backed agent/diagnosis modules.
+
+PowerShell:
+$env:GROQ_API_KEY="your_key_here"
+ 
 
 Ensure [uv](https://github.com/astral-sh/uv) is installed for dependency management.
 
@@ -154,7 +160,7 @@ uv run --with faiss-cpu --with sentence-transformers --with pandas --with joblib
 ### 4.2. Run the Unified Orchestrator on Mock Data
 To run the connected orchestrator alone:
 ```bash
-uv run --with faiss-cpu --with sentence-transformers --with pandas --with joblib --with requests --with einops python factoryguard_system.py
+uv run --with faiss-cpu --with sentence-transformers --with pandas --with joblib --with requests --with einops --with xgboost
 ```
 
 ### 4.3. Run the Governance Adapter Test
